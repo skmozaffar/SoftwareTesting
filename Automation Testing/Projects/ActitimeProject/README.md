@@ -1,4 +1,4 @@
-<h2>Actitime Projects</h2>
+<h2>Actitime Project</h2>
 <p>In this project I have written test cases for Login and Create Customer functionality.</p>
 
  <h4>Tools/Frameworks Used</h4>
