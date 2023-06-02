@@ -1,0 +1,28 @@
+package com.actitime.generics;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class FileLib {
+
+	public String getPropertyData(String key) throws IOException {
+		FileInputStream fis = new FileInputStream("C:\\Mozaffar\\Selenium\\ActitimeProject\\src\\test\\resources\\data\\commondata.property");
+		Properties p = new Properties();
+		p.load(fis);
+		String text = p.getProperty(key);
+		return text;
+	}
+	
+	public String readExcelData(String sheet, int row, int cell) throws EncryptedDocumentException, IOException {
+		FileInputStream fis = new FileInputStream("C:\\Mozaffar\\Selenium\\ActitimeProject\\src\\test\\resources\\data\\CreateCustomer.xlsx");
+		Workbook wb = WorkbookFactory.create(fis);
+		String value = wb.getSheet(sheet).getRow(row).getCell(cell).getStringCellValue();
+		return value;
+	}
+	
+}
